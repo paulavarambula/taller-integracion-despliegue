@@ -22,9 +22,12 @@ jobs:
       - checkout:
           path: ~/project/
       - node/install:
-          node-version: '20.9'
+          node-version: '22.11.0'
       - run: node --version
       - run: npm i -g @railway/cli
+      - run:
+          name: Authenticate Railway
+          command: echo $RAILWAY_TOKEN | railway login --token
       - run:
           name: Deploy to Railway App
           command: |
