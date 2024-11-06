@@ -30,7 +30,7 @@ jobs:
           command: |
             cd bankchurn-api 
             railway link --project 0f96b1d9-df1f-4083-aa89-1b4778128489 --service 1dfa7afc-4387-461a-90eb-26b95ed40454
-            railway up --detach
+            echo $RAILWAY_TOKEN | railway up --detach --token $RAILWAY_TOKEN
 
 
 tags_only: &tags_only
